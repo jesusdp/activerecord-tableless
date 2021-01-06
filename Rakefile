@@ -10,10 +10,10 @@ task :default => [:clean, :all]
 desc 'Test the activerecord-tableless on all supported Rails versions.'
 task :all do |t|
   if ENV['BUNDLE_GEMFILE']
-    exec('rake test spec cucumber')
+    exec('rake test spec')
   else
     Rake::Task["appraisal:install"].execute
-    exec('rake appraisal test spec cucumber')
+    exec('rake appraisal test spec')
   end
 end
 
